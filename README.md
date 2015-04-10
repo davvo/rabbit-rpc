@@ -1,18 +1,14 @@
 # rabbit-rpc
-simple rpc using [rabbit.js](https://github.com/squaremo/rabbit.js)
+simple rpc using [RabbitMQ](https://www.rabbitmq.com/) and [amqp.node](https://github.com/squaremo/amqp.node)
 
 ## example
 caller.js
 ```sh
 var rpc = require('rabbit-rpc')();
 
-var count = 0;
-
-setInterval(function () {
-    rpc.call('foo', ++count, function (res) {
-        console.log(res);
-    });
-}, 1000);
+rpc.call('square', 99, function (res) {
+    console.log('The square of %d is', res);
+});
 
 ```
 
@@ -20,8 +16,7 @@ handler.js
 ```sh
 var rpc = require('rabbit-rpc')();
 
-rpc.handle('foo', function (payload, callback) {
-    console.log('handle', payload);
-    callback('bar!');
+rpc.handle('square', function (num, callback) {
+    callback(num*num);
 });
 ```
