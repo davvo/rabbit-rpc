@@ -1,5 +1,5 @@
 var fs = require('fs'),
-    rpc = require('..')(),
+    rpc = require('..')({autoDelete: true}),
     test = require('tape');
 
 var options = {
