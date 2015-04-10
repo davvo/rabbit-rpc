@@ -7,7 +7,7 @@ caller.js
 var rpc = require('rabbit-rpc')();
 
 rpc.call('square', 99, function (res) {
-    console.log('The square of %d is', res);
+    console.log('The square of 99 is', res);
 });
 
 ```
