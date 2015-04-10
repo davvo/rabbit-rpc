@@ -7,7 +7,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "rabbit",
+    "rabbitmq",
+    "rpc"
+  ],
+  "author": "David Ershag",
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.3.2",
