@@ -1,8 +1,13 @@
 # rabbit-rpc
 simple rpc using [RabbitMQ](https://www.rabbitmq.com/) and [amqp.node](https://github.com/squaremo/amqp.node)
 
+## Install
+```sh
+> npm install rabbit-rpc
+```
+
 ## example
-caller.js
+### caller.js
 ```sh
 var rpc = require('rabbit-rpc')('amqp://localhost');
 
@@ -12,7 +17,7 @@ rpc.call('square', 99, function (res) {
 
 ```
 
-handler.js
+### handler.js
 ```sh
 var rpc = require('rabbit-rpc')('amqp://localhost');
 
