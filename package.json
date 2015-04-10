@@ -5,7 +5,7 @@
   "repository": "https://github.com/davvo/rabbit-rpc",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/*.js"
   },
   "keywords": [
     "rabbit",
@@ -17,5 +17,8 @@
   "dependencies": {
     "amqplib": "^0.3.2",
     "node-uuid": "^1.4.3"
+  },
+  "devDependencies": {
+    "tape": "^4.0.0"
   }
 }
