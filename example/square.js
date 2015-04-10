@@ -6,10 +6,10 @@ rpc.handle('square', function (num, callback) {
     }, Math.random() * 1000);
 });
 
-function printSqure(num) {
+function printSquare(num) {
     rpc.call('square', num, function (res) {
         console.log('The square of %d is', num, res);
     });
 }
 
-[1, 2, 3, 4, 5].forEach(printSqure);
+[1, 2, 3, 4, 5].forEach(printSquare);
