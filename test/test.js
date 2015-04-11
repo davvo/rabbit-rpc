@@ -125,6 +125,20 @@ test('promise', options, function (t) {
     });
 });
 
+test('multi-args', options, function (t) {
+    rpc.call('multi-args-test', 1, 2, 3, function (foo, bar) {
+        t.equal(foo, "foo");
+        t.equal(bar, "bar");
+        t.end();
+    });
+    rpc.handle('multi-args-test', function (a, b, c, callback) {
+        t.equals(a, 1);
+        t.equals(b, 2);
+        t.equals(c, 3);
+        callback("foo", "bar");
+    });
+});
+
 test('exit', function (t) {
     t.end();
     process.exit(0);
