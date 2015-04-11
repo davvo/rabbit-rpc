@@ -1,6 +1,6 @@
 {
   "name": "rabbit-rpc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple RPC using RabbitMQ",
   "repository": "https://github.com/davvo/rabbit-rpc",
   "main": "index.js",
