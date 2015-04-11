@@ -11,7 +11,7 @@ simple rpc using [RabbitMQ](https://www.rabbitmq.com/) and [amqp.node](https://g
 ```sh
 var rpc = require('rabbit-rpc')('amqp://localhost');
 
-rpc.call('square', 99, function (res) {
+rpc.call('square', 99, function (err, res) {
     console.log('The square of 99 is', res);
 });
 
@@ -31,6 +31,6 @@ rpc.promise('square', 99).then(function (res) {
 var rpc = require('rabbit-rpc')('amqp://localhost');
 
 rpc.handle('square', function (num, callback) {
-    callback(num*num);
+    callback(null, num*num);
 });
 ```
