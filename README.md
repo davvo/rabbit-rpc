@@ -16,6 +16,15 @@ rpc.call('square', 99, function (res) {
 });
 
 ```
+or
+```sh
+var rpc = require('rabbit-rpc')('amqp://localhost');
+
+rpc.promise('square', 99).then(function (res) {
+    console.log('The square of 99 is', res);
+});
+
+```
 
 ### handler.js
 ```sh
