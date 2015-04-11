@@ -1,4 +1,6 @@
-var rpc = require('..')();
+var rpc = require('..')({
+    durable: false
+});
 
 rpc.handle('square', function (num, callback) {
     setTimeout(function () {
