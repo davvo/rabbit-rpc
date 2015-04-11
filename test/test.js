@@ -114,6 +114,17 @@ test('binary', options, function (t) {
     });
 });
 
+test('promise', options, function (t) {
+    rpc.promise('promise-test', 123).then(function (res) {
+        t.equal(res, 456);
+        t.end();
+    });
+    rpc.handle('promise-test', function (value, callback) {
+        t.equals(value, 123);
+        callback(456);
+    });
+});
+
 test('exit', function (t) {
     t.end();
     process.exit(0);
